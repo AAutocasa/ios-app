@@ -11,7 +11,6 @@
 		C033080F265ACE9600B74FBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033080E265ACE9600B74FBC /* ContentView.swift */; };
 		C0330811265ACE9A00B74FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0330810265ACE9A00B74FBC /* Assets.xcassets */; };
 		C0330814265ACE9A00B74FBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0330813265ACE9A00B74FBC /* Preview Assets.xcassets */; };
-		C033081D265AD61500B74FBC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033081C265AD61500B74FBC /* Protocols.swift */; };
 		C033081F265AE51100B74FBC /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033081E265AE51100B74FBC /* DevicesView.swift */; };
 		C0330822265AE52700B74FBC /* DevicesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330821265AE52700B74FBC /* DevicesRowView.swift */; };
 		C0330826265AE56900B74FBC /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330825265AE56900B74FBC /* Device.swift */; };
@@ -35,7 +34,6 @@
 		C0330810265ACE9A00B74FBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0330813265ACE9A00B74FBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0330815265ACE9A00B74FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C033081C265AD61500B74FBC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		C033081E265AE51100B74FBC /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		C0330821265AE52700B74FBC /* DevicesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRowView.swift; sourceTree = "<group>"; };
 		C0330825265AE56900B74FBC /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				C033080E265ACE9600B74FBC /* ContentView.swift */,
 				C0330815265ACE9A00B74FBC /* Info.plist */,
 				C0330812265ACE9A00B74FBC /* Preview Content */,
-				C033081C265AD61500B74FBC /* Protocols.swift */,
 			);
 			path = Autocasa;
 			sourceTree = "<group>";
@@ -265,7 +262,6 @@
 				C033083F265AF3DE00B74FBC /* DeviceCoordinator.swift in Sources */,
 				C0330830265AE62A00B74FBC /* DevicesInteractor.swift in Sources */,
 				C033082E265AE5B900B74FBC /* DeviceInteractor.swift in Sources */,
-				C033081D265AD61500B74FBC /* Protocols.swift in Sources */,
 				C033080F265ACE9600B74FBC /* ContentView.swift in Sources */,
 				C0330826265AE56900B74FBC /* Device.swift in Sources */,
 				C033081F265AE51100B74FBC /* DevicesView.swift in Sources */,
