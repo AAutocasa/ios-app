@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    let coordinator = DefaultDevicesCoordinator()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        coordinator.associatedView()
     }
 }
 

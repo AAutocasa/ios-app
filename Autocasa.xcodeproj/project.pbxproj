@@ -11,6 +11,21 @@
 		C033080F265ACE9600B74FBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033080E265ACE9600B74FBC /* ContentView.swift */; };
 		C0330811265ACE9A00B74FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0330810265ACE9A00B74FBC /* Assets.xcassets */; };
 		C0330814265ACE9A00B74FBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0330813265ACE9A00B74FBC /* Preview Assets.xcassets */; };
+		C033081D265AD61500B74FBC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033081C265AD61500B74FBC /* Protocols.swift */; };
+		C033081F265AE51100B74FBC /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033081E265AE51100B74FBC /* DevicesView.swift */; };
+		C0330822265AE52700B74FBC /* DevicesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330821265AE52700B74FBC /* DevicesRowView.swift */; };
+		C0330826265AE56900B74FBC /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330825265AE56900B74FBC /* Device.swift */; };
+		C0330828265AE57100B74FBC /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330827265AE57100B74FBC /* DeviceViewModel.swift */; };
+		C033082B265AE5AB00B74FBC /* DevicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033082A265AE5AB00B74FBC /* DevicePresenter.swift */; };
+		C033082E265AE5B900B74FBC /* DeviceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033082D265AE5B900B74FBC /* DeviceInteractor.swift */; };
+		C0330830265AE62A00B74FBC /* DevicesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033082F265AE62A00B74FBC /* DevicesInteractor.swift */; };
+		C0330833265AE6F000B74FBC /* DeviceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330832265AE6F000B74FBC /* DeviceWorker.swift */; };
+		C0330836265AE70F00B74FBC /* DeviceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330835265AE70F00B74FBC /* DeviceStore.swift */; };
+		C0330838265AE73C00B74FBC /* DevicesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330837265AE73C00B74FBC /* DevicesStore.swift */; };
+		C033083A265AE77000B74FBC /* DevicesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330839265AE77000B74FBC /* DevicesPresenter.swift */; };
+		C033083D265AF3CF00B74FBC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033083C265AF3CF00B74FBC /* Coordinator.swift */; };
+		C033083F265AF3DE00B74FBC /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */; };
+		C0330841265AF3E700B74FBC /* DevicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +35,21 @@
 		C0330810265ACE9A00B74FBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0330813265ACE9A00B74FBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0330815265ACE9A00B74FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C033081C265AD61500B74FBC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C033081E265AE51100B74FBC /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		C0330821265AE52700B74FBC /* DevicesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRowView.swift; sourceTree = "<group>"; };
+		C0330825265AE56900B74FBC /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C0330827265AE57100B74FBC /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		C033082A265AE5AB00B74FBC /* DevicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePresenter.swift; sourceTree = "<group>"; };
+		C033082D265AE5B900B74FBC /* DeviceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractor.swift; sourceTree = "<group>"; };
+		C033082F265AE62A00B74FBC /* DevicesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesInteractor.swift; sourceTree = "<group>"; };
+		C0330832265AE6F000B74FBC /* DeviceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceWorker.swift; sourceTree = "<group>"; };
+		C0330835265AE70F00B74FBC /* DeviceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStore.swift; sourceTree = "<group>"; };
+		C0330837265AE73C00B74FBC /* DevicesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesStore.swift; sourceTree = "<group>"; };
+		C0330839265AE77000B74FBC /* DevicesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesPresenter.swift; sourceTree = "<group>"; };
+		C033083C265AF3CF00B74FBC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
+		C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +82,20 @@
 		C033080B265ACE9600B74FBC /* Autocasa */ = {
 			isa = PBXGroup;
 			children = (
+				C033083B265AF3BA00B74FBC /* Coordinators */,
+				C033082C265AE5B000B74FBC /* Interactors */,
+				C0330823265AE55900B74FBC /* Models */,
+				C0330829265AE5A100B74FBC /* Presenters */,
+				C033081B265ACEBF00B74FBC /* Resourcers */,
+				C0330834265AE70600B74FBC /* Stores */,
+				C0330820265AE51B00B74FBC /* Views */,
+				C0330824265AE55F00B74FBC /* ViewModels */,
+				C0330831265AE6E200B74FBC /* Workers */,
 				C033080C265ACE9600B74FBC /* AutocasaApp.swift */,
 				C033080E265ACE9600B74FBC /* ContentView.swift */,
 				C0330815265ACE9A00B74FBC /* Info.plist */,
 				C0330812265ACE9A00B74FBC /* Preview Content */,
-				C033081B265ACEBF00B74FBC /* Resourcers */,
+				C033081C265AD61500B74FBC /* Protocols.swift */,
 			);
 			path = Autocasa;
 			sourceTree = "<group>";
@@ -75,6 +114,76 @@
 				C0330810265ACE9A00B74FBC /* Assets.xcassets */,
 			);
 			path = Resourcers;
+			sourceTree = "<group>";
+		};
+		C0330820265AE51B00B74FBC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C033081E265AE51100B74FBC /* DevicesView.swift */,
+				C0330821265AE52700B74FBC /* DevicesRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0330823265AE55900B74FBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0330825265AE56900B74FBC /* Device.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0330824265AE55F00B74FBC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0330827265AE57100B74FBC /* DeviceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C0330829265AE5A100B74FBC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				C033082A265AE5AB00B74FBC /* DevicePresenter.swift */,
+				C0330839265AE77000B74FBC /* DevicesPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		C033082C265AE5B000B74FBC /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				C033082D265AE5B900B74FBC /* DeviceInteractor.swift */,
+				C033082F265AE62A00B74FBC /* DevicesInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		C0330831265AE6E200B74FBC /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				C0330832265AE6F000B74FBC /* DeviceWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		C0330834265AE70600B74FBC /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				C0330835265AE70F00B74FBC /* DeviceStore.swift */,
+				C0330837265AE73C00B74FBC /* DevicesStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		C033083B265AF3BA00B74FBC /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C033083C265AF3CF00B74FBC /* Coordinator.swift */,
+				C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */,
+				C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +255,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0330833265AE6F000B74FBC /* DeviceWorker.swift in Sources */,
+				C0330841265AF3E700B74FBC /* DevicesCoordinator.swift in Sources */,
+				C0330836265AE70F00B74FBC /* DeviceStore.swift in Sources */,
+				C033083D265AF3CF00B74FBC /* Coordinator.swift in Sources */,
+				C033083A265AE77000B74FBC /* DevicesPresenter.swift in Sources */,
+				C033082B265AE5AB00B74FBC /* DevicePresenter.swift in Sources */,
+				C0330822265AE52700B74FBC /* DevicesRowView.swift in Sources */,
+				C033083F265AF3DE00B74FBC /* DeviceCoordinator.swift in Sources */,
+				C0330830265AE62A00B74FBC /* DevicesInteractor.swift in Sources */,
+				C033082E265AE5B900B74FBC /* DeviceInteractor.swift in Sources */,
+				C033081D265AD61500B74FBC /* Protocols.swift in Sources */,
 				C033080F265ACE9600B74FBC /* ContentView.swift in Sources */,
+				C0330826265AE56900B74FBC /* Device.swift in Sources */,
+				C033081F265AE51100B74FBC /* DevicesView.swift in Sources */,
+				C0330828265AE57100B74FBC /* DeviceViewModel.swift in Sources */,
 				C033080D265ACE9600B74FBC /* AutocasaApp.swift in Sources */,
+				C0330838265AE73C00B74FBC /* DevicesStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
