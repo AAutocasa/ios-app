@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol DeviceInteractor: AnyObject {
-    func fetchDevice(with id: UUID)
+    func fetchDevice(with id: String)
     func activateDevice()
 }
 
@@ -35,7 +35,7 @@ class DefaultDeviceInteractor: DeviceInteractor {
         self.presenter = delegate
     }
     
-    func fetchDevice(with id: UUID) {
+    func fetchDevice(with id: String) {
         presenter?.presentLoading()
         cancellable = deviceProvider.fetchDevice(with: id)
             .receive(on: RunLoop.main)
@@ -51,7 +51,7 @@ class DefaultDeviceInteractor: DeviceInteractor {
     
     func activateDevice() {
         guard let device = device else { return }
-        cancellable = deviceProvider.activate(device)
+        cancellable = deviceProvider.activate(deviceWithId: device.originalId)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] error in
                 if case .failure(let error) = error {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,11 @@
 		C033083D265AF3CF00B74FBC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033083C265AF3CF00B74FBC /* Coordinator.swift */; };
 		C033083F265AF3DE00B74FBC /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */; };
 		C0330841265AF3E700B74FBC /* DevicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */; };
+		C0330844265B152400B74FBC /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = C0330843265B152400B74FBC /* CombineMoya */; };
+		C0330846265B152400B74FBC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C0330845265B152400B74FBC /* Moya */; };
+		C0330849265B161A00B74FBC /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330848265B161A00B74FBC /* DeviceService.swift */; };
+		C033084B265B171400B74FBC /* FirmwareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084A265B171400B74FBC /* FirmwareService.swift */; };
+		C033084D265B188400B74FBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084C265B188400B74FBC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,9 @@
 		C033083C265AF3CF00B74FBC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
 		C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesCoordinator.swift; sourceTree = "<group>"; };
+		C0330848265B161A00B74FBC /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		C033084A265B171400B74FBC /* FirmwareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareService.swift; sourceTree = "<group>"; };
+		C033084C265B188400B74FBC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0330846265B152400B74FBC /* Moya in Frameworks */,
+				C0330844265B152400B74FBC /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,7 @@
 				C033083B265AF3BA00B74FBC /* Coordinators */,
 				C033082C265AE5B000B74FBC /* Interactors */,
 				C0330823265AE55900B74FBC /* Models */,
+				C0330847265B15E800B74FBC /* Networking */,
 				C0330829265AE5A100B74FBC /* Presenters */,
 				C033081B265ACEBF00B74FBC /* Resourcers */,
 				C0330834265AE70600B74FBC /* Stores */,
@@ -93,6 +104,7 @@
 				C033080E265ACE9600B74FBC /* ContentView.swift */,
 				C0330815265ACE9A00B74FBC /* Info.plist */,
 				C0330812265ACE9A00B74FBC /* Preview Content */,
+				C033084C265B188400B74FBC /* Constants.swift */,
 			);
 			path = Autocasa;
 			sourceTree = "<group>";
@@ -183,6 +195,15 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		C0330847265B15E800B74FBC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C0330848265B161A00B74FBC /* DeviceService.swift */,
+				C033084A265B171400B74FBC /* FirmwareService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +220,10 @@
 			dependencies = (
 			);
 			name = Autocasa;
+			packageProductDependencies = (
+				C0330843265B152400B74FBC /* CombineMoya */,
+				C0330845265B152400B74FBC /* Moya */,
+			);
 			productName = Autocasa;
 			productReference = C0330809265ACE9600B74FBC /* Autocasa.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +251,9 @@
 				Base,
 			);
 			mainGroup = C0330800265ACE9600B74FBC;
+			packageReferences = (
+				C0330842265B152400B74FBC /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = C033080A265ACE9600B74FBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0330833265AE6F000B74FBC /* DeviceWorker.swift in Sources */,
+				C033084D265B188400B74FBC /* Constants.swift in Sources */,
 				C0330841265AF3E700B74FBC /* DevicesCoordinator.swift in Sources */,
 				C0330836265AE70F00B74FBC /* DeviceStore.swift in Sources */,
 				C033083D265AF3CF00B74FBC /* Coordinator.swift in Sources */,
@@ -261,6 +290,8 @@
 				C0330822265AE52700B74FBC /* DevicesRowView.swift in Sources */,
 				C033083F265AF3DE00B74FBC /* DeviceCoordinator.swift in Sources */,
 				C0330830265AE62A00B74FBC /* DevicesInteractor.swift in Sources */,
+				C0330849265B161A00B74FBC /* DeviceService.swift in Sources */,
+				C033084B265B171400B74FBC /* FirmwareService.swift in Sources */,
 				C033082E265AE5B900B74FBC /* DeviceInteractor.swift in Sources */,
 				C033080F265ACE9600B74FBC /* ContentView.swift in Sources */,
 				C0330826265AE56900B74FBC /* Device.swift in Sources */,
@@ -456,6 +487,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0330842265B152400B74FBC /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = revision;
+				revision = e5a28fb62dd5ff4e17b7025643366550044a40b0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0330843265B152400B74FBC /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0330842265B152400B74FBC /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		C0330845265B152400B74FBC /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0330842265B152400B74FBC /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0330801265ACE9600B74FBC /* Project object */;
 }

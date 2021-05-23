@@ -8,11 +8,11 @@
 import SwiftUI
 
 class DeviceStore: ObservableObject {
-    private var deviceId: UUID
+    private var deviceId: String
     private var interactor: DeviceInteractor
     @Published var viewModel: DeviceViewModel
     
-    init(deviceId: UUID, interactor: DeviceInteractor) {
+    init(deviceId: String, interactor: DeviceInteractor) {
         self.deviceId = deviceId
         self.interactor = interactor
         self.viewModel = DeviceViewModel(state: .loading, navigation: .none)
