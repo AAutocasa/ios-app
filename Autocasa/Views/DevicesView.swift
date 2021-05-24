@@ -28,6 +28,9 @@ struct DevicesView: View {
                         List(content.devices, id: \.id) { device in
                             Text(device.originalId)
                             Text(device.type)
+                            Text(device.isActive.description)
+                            Text(device.lastHeartbeat.description)
+                            Text(device.)
                         }
                     }
                 )

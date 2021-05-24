@@ -30,6 +30,7 @@
 		C0330849265B161A00B74FBC /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330848265B161A00B74FBC /* DeviceService.swift */; };
 		C033084B265B171400B74FBC /* FirmwareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084A265B171400B74FBC /* FirmwareService.swift */; };
 		C033084D265B188400B74FBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084C265B188400B74FBC /* Constants.swift */; };
+		C0330850265B321000B74FBC /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084F265B321000B74FBC /* JSONDecoder+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C0330848265B161A00B74FBC /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		C033084A265B171400B74FBC /* FirmwareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareService.swift; sourceTree = "<group>"; };
 		C033084C265B188400B74FBC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C033084F265B321000B74FBC /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		C033080B265ACE9600B74FBC /* Autocasa */ = {
 			isa = PBXGroup;
 			children = (
+				C033084E265B320300B74FBC /* Extensions */,
 				C033083B265AF3BA00B74FBC /* Coordinators */,
 				C033082C265AE5B000B74FBC /* Interactors */,
 				C0330823265AE55900B74FBC /* Models */,
@@ -204,6 +207,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		C033084E265B320300B74FBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C033084F265B321000B74FBC /* JSONDecoder+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,6 +307,7 @@
 				C033080F265ACE9600B74FBC /* ContentView.swift in Sources */,
 				C0330826265AE56900B74FBC /* Device.swift in Sources */,
 				C033081F265AE51100B74FBC /* DevicesView.swift in Sources */,
+				C0330850265B321000B74FBC /* JSONDecoder+.swift in Sources */,
 				C0330828265AE57100B74FBC /* DeviceViewModel.swift in Sources */,
 				C033080D265ACE9600B74FBC /* AutocasaApp.swift in Sources */,
 				C0330838265AE73C00B74FBC /* DevicesStore.swift in Sources */,

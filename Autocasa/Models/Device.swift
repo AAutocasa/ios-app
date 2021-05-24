@@ -14,15 +14,25 @@ class Device: Identifiable, Codable {
     
     let originalId: String
     let type: String
-//    let firmware: Int
-//    let firmwareVersion: String
-//    let status: Bool
-//    let lastHearbeat: Date
-//    let role: Int
+    let firmware: Int
+    let firmwareVersion: String
+    let status: Int
+    
+    var isActive: Bool {
+        status != 0
+    }
+    
+    let lastHeartbeat: Date
+    let role: Int
     
     enum CodingKeys: String, CodingKey {
         case originalId = "id"
         case type
+        case firmware
+        case firmwareVersion
+        case status
+        case lastHeartbeat
+        case role
     }
 }
 

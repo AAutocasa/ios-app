@@ -23,29 +23,28 @@ class DefaultDeviceWorker: DeviceWorker {
     func fetchDevices() -> AnyPublisher<[Device], Error> {
         provider.requestPublisher(.getDevices)
             .map { $0.data }
-            .decode(type: [Device].self, decoder: JSONDecoder())
+            .decode(type: [Device].self, decoder: DeviceJSONDecoder())
             .eraseToAnyPublisher()
     }
     
     func fetchDevice(with id: String) -> AnyPublisher<Device, Error> {
         provider.requestPublisher(.getDevice(byId: id))
             .map { $0.data }
-            .decode(type: Device.self, decoder: JSONDecoder())
+            .decode(type: Device.self, decoder: DeviceJSONDecoder())
             .eraseToAnyPublisher()
     }
     
     func activate(deviceWithId id: String) -> AnyPublisher<Device, Error> {
         provider.requestPublisher(.activateDevice(deviceId: id))
             .map { $0.data }
-            .decode(type: Device.self, decoder: JSONDecoder())
+            .decode(type: Device.self, decoder: DeviceJSONDecoder())
             .eraseToAnyPublisher()
     }
     
     func deactivate(deviceWithId id: String) -> AnyPublisher<Device, Error> {
         provider.requestPublisher(.deactivateDevice(deviceId: id))
             .map { $0.data }
-            .decode(type: Device.self, decoder: JSONDecoder())
+            .decode(type: Device.self, decoder: DeviceJSONDecoder())
             .eraseToAnyPublisher()
     }
-
 }
