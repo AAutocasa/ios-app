@@ -10,11 +10,13 @@ import Combine
 
 protocol DevicesInteractor: AnyObject {
     func fetchDevices()
+    func selectDevice(originalId: String)
 }
 
 protocol DevicesInteractorDelegate: AnyObject {
     func presentLoading()
     func present(devices: [Device])
+    func present(device: Device)
     func present(error: Error)
 }
 
@@ -31,11 +33,12 @@ class DefaultDevicesInteractor: DevicesInteractor {
     }
     
     func setup(delegate: DevicesInteractorDelegate) {
-        print("Setting up delegate for the interactor")
+        print("[DefaultDevicesInteractor] Setting up delegate for the interactor")
         self.presenter = delegate
     }
     
     func fetchDevices() {
+        print("[DefaultDevicesInteractor] Fetch devices called")
         presenter?.presentLoading()
         cancellable = deviceProvider.fetchDevices()
             .receive(on: RunLoop.main)
@@ -44,10 +47,25 @@ class DefaultDevicesInteractor: DevicesInteractor {
                     self?.presenter?.present(error: error)
                 }
             }, receiveValue: { [weak self] devices in
-                print("Got devices: \(devices)")
+                print("[DefaultDevicesInteractor] Got devices: \(devices)")
                 self?.devices = devices
-                print("Sending devices to presenter \(self?.presenter)")
+                print("[DefaultDevicesInteractor] Sending devices to presenter \(self?.presenter)")
                 self?.presenter?.present(devices: devices)
+            })
+    }
+    
+    func selectDevice(originalId: String) {
+        print("[DefaultDevicesInteractor] Select device called")
+        cancellable = deviceProvider.fetchDevice(with: originalId)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { [weak self] error in
+                if case .failure(let error) = error {
+                    self?.presenter?.present(error: error)
+                }
+            }, receiveValue: { [weak self] device in
+                print("[DefaultDevicesInteractor] Got device: \(device)")
+                print("[DefaultDevicesInteractor] Sending device to presenter \(self?.presenter)")
+                self?.presenter?.present(device: device)
             })
     }
 }

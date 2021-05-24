@@ -7,37 +7,7 @@
 
 import Foundation
 
-struct DevicesViewModel {
-    struct Content {
-        let devices: [DeviceViewModel.Content]
-    }
-    
-    struct Error {
-        
-    }
-    
-    enum State {
-        case loading
-        case content(Content)
-        case error(Error)
-    }
-    
-    var state: State
-    var navigation: NavigationViewModel
-}
-
-
 struct DeviceViewModel {
-    static func fromModel(model: Device) -> DeviceViewModel.Content {
-        DeviceViewModel.Content(id: model.id,
-                               originalId: model.originalId,
-                               type: model.type,
-                               firmware: model.firmware,
-                               firmwareVersion: model.firmwareVersion,
-                               isActive: model.isActive,
-                               lastHeartbeat: model.lastHeartbeat,
-                               role: model.role)
-    }
     
     struct Content {
         let id: UUID
@@ -48,6 +18,17 @@ struct DeviceViewModel {
         let isActive: Bool
         let lastHeartbeat: Date
         let role: Int
+        
+        static func fromModel(model: Device) -> DeviceViewModel.Content {
+            DeviceViewModel.Content(id: model.id,
+                                   originalId: model.originalId,
+                                   type: model.type,
+                                   firmware: model.firmware,
+                                   firmwareVersion: model.firmwareVersion,
+                                   isActive: model.isActive,
+                                   lastHeartbeat: model.lastHeartbeat,
+                                   role: model.role)
+        }
     }
     
     struct Error {

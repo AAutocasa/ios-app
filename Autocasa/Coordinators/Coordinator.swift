@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol CoordinatorDelegate {
+protocol CoordinatorDelegate: AnyObject {
     func renderView(_ view: AnyView)
 }
 
@@ -16,8 +16,6 @@ struct NavigationViewModel {
     var destination: AnyView?
     static var none = NavigationViewModel(shouldNavigate: false, destination: nil)
 }
-
-
 
 //NavigationView { () -> AnyView in
 //    switch store.viewModel.state {

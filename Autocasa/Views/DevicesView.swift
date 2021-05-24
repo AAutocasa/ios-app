@@ -24,17 +24,13 @@ struct DevicesView: View {
             case .content(let content):
                 return AnyView(
                     VStack {
-                        Text("Devices")
-                        
                         List(content.devices, id: \.id) { device in
-                            VStack(alignment: .leading) {
-                                Text("Original ID: \(device.originalId)")
-                                Text("Type: \(device.type)")
-                                Text("Is Active: \(device.isActive.description)")
-                                Text("Last Heartbeat: \(device.lastHeartbeat)")
-                                Text("Firmware: \(device.firmware)")
-                                Text("Firmware Version: \(device.firmwareVersion)")
-                                Text("Role: \(device.role)")
+                            NavigationLink(
+                                destination: store.viewModel.navigation.destination,
+                                isActive: $store.viewModel.navigation.shouldNavigate) {
+                                DevicesRowView(device: device).onTapGesture {
+                                    store.deviceSelected(originalId: device.originalId)
+                                }
                             }
                         }
                     }
@@ -44,6 +40,8 @@ struct DevicesView: View {
             //  finishButtonTapped: store.performAction,
             //  navigation: $store.viewModel.navigation))
             }
-        }.onAppear(perform: store.fetchDevices)
+        }
+        .navigationTitle("Devices")
+        .onAppear(perform: store.fetchDevices)
     }
 }

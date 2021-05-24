@@ -11,7 +11,7 @@ protocol DevicePresenter: AnyObject {
     
 }
 
-protocol DevicePresenterDelegate: AnyObject, CoordinatorDelegate {
+protocol DevicePresenterDelegate: CoordinatorDelegate {
     func renderLoading()
     func render(content: DeviceViewModel.Content)
     func render(error: DeviceViewModel.Error)
@@ -42,12 +42,13 @@ extension DefaultDevicePresenter: DeviceInteractorDelegate {
     }
     
     func present(device: Device) {
+        print("[DefaultDevicePresenter] Present claled with device \(device)")
         delegate?.render(content: contentViewModel(from: device))
     }
     
     private func contentViewModel(from device: Device) -> VMContent {
         // TODO: Converter model em view model
-        return DeviceViewModel.fromModel(model: device)
+        return DeviceViewModel.Content.fromModel(model: device)
     }
     
     func present(error: Error) {

@@ -8,18 +8,18 @@
 import SwiftUI
 
 class DeviceStore: ObservableObject {
-    private var deviceId: String
+    private var device: Device
     private var interactor: DeviceInteractor
     @Published var viewModel: DeviceViewModel
     
-    init(deviceId: String, interactor: DeviceInteractor) {
-        self.deviceId = deviceId
+    init(device: Device, interactor: DeviceInteractor) {
+        self.device = device
         self.interactor = interactor
         self.viewModel = DeviceViewModel(state: .loading, navigation: .none)
     }
     
     func fetchDevice() {
-        interactor.fetchDevice(with: deviceId)
+        interactor.fetchDevice(with: device.originalId)
     }
     
     func performAction() {
@@ -34,6 +34,7 @@ extension DeviceStore: DevicePresenterDelegate {
     }
     
     func render(content: DeviceViewModel.Content) {
+        print("[DeviceStore] Rendering with content \(content)")
         self.viewModel.state = .content(content)
     }
     

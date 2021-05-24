@@ -19,6 +19,11 @@ class DevicesStore: ObservableObject {
     func fetchDevices() {
         interactor.fetchDevices()
     }
+    
+    func deviceSelected(originalId: String) {
+        print("[DeviceStore] Received tap on row with id: \(originalId)")
+        interactor.selectDevice(originalId: originalId)
+    }
 }
 
 extension DevicesStore: DevicesPresenterDelegate {
@@ -28,16 +33,17 @@ extension DevicesStore: DevicesPresenterDelegate {
     }
     
     func render(content: DevicesViewModel.Content) {
-        print("Rendering devices: \(content)")
+        print("[DeviceStore] Rendering devices: \(content)")
         self.viewModel.state = .content(content)
     }
     
     func render(error: DevicesViewModel.Error) {
-        print("Rendering error: \(error)")
+        print("[DeviceStore] Rendering error: \(error)")
         self.viewModel.state = .error(error)
     }
     
     func renderView(_ view: AnyView) {
+        print("[DeviceStore] Render view called...")
         viewModel.navigation.destination = view
         viewModel.navigation.shouldNavigate = true
     }
