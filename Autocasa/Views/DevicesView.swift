@@ -25,19 +25,24 @@ struct DevicesView: View {
                 return AnyView(
                     VStack {
                         Text("Devices")
+                        
                         List(content.devices, id: \.id) { device in
-                            Text(device.originalId)
-                            Text(device.type)
-                            Text(device.isActive.description)
-                            Text(device.lastHeartbeat.description)
-                            Text(device.)
+                            VStack(alignment: .leading) {
+                                Text("Original ID: \(device.originalId)")
+                                Text("Type: \(device.type)")
+                                Text("Is Active: \(device.isActive.description)")
+                                Text("Last Heartbeat: \(device.lastHeartbeat)")
+                                Text("Firmware: \(device.firmware)")
+                                Text("Firmware Version: \(device.firmwareVersion)")
+                                Text("Role: \(device.role)")
+                            }
                         }
                     }
                 )
-
-//AnyView(DeviceContentView(content: content,
-//  finishButtonTapped: store.performAction,
-//  navigation: $store.viewModel.navigation))
+                
+            //AnyView(DeviceContentView(content: content,
+            //  finishButtonTapped: store.performAction,
+            //  navigation: $store.viewModel.navigation))
             }
         }.onAppear(perform: store.fetchDevices)
     }
