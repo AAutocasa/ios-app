@@ -10,15 +10,15 @@ import Combine
 import Moya
 import CombineMoya
 
-protocol DeviceWorker: AnyObject {
+protocol DeviceService: AnyObject {
     func fetchDevices() -> AnyPublisher<[Device], Error>
     func fetchDevice(with id: String) -> AnyPublisher<Device, Error>
     func activate(deviceWithId id: String) -> AnyPublisher<Device, Error>
     func deactivate(deviceWithId id: String) -> AnyPublisher<Device, Error>
 }
 
-class DefaultDeviceWorker: DeviceWorker {
-    let provider = MoyaProvider<DeviceService>()
+class DefaultDeviceService: DeviceService {
+    let provider = MoyaProvider<DeviceEndpoint>()
     
     func fetchDevices() -> AnyPublisher<[Device], Error> {
         provider.requestPublisher(.getDevices)

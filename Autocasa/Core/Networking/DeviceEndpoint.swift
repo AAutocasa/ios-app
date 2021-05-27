@@ -7,7 +7,7 @@
 import Foundation
 import Moya
 
-enum DeviceService {
+enum DeviceEndpoint {
     case getDevices
     case getDevice(byId: String)
     
@@ -21,7 +21,7 @@ enum DeviceService {
 }
 
 // MARK: - TargetType Protocol Implementation
-extension DeviceService: TargetType {
+extension DeviceEndpoint: TargetType {
     
     var baseURL: URL { return URL(string: Constants.statusServerURL)! }
     var path: String {

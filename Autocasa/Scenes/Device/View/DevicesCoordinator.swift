@@ -19,9 +19,10 @@ class DefaultDevicesCoordinator: DevicesCoordinator {
     }
     
     func associatedView() -> AnyView {
-        let deviceProvider = DefaultDeviceWorker()
-        let interactor = DefaultDevicesInteractor(deviceWorker: deviceProvider)
-        
+        let deviceService = DefaultDeviceService()
+        let deviceRepository = DefaultDeviceRepository(deviceService: deviceService)
+        let interactor = DefaultDevicesInteractor(deviceRepository: deviceRepository)
+    
         let presenter = DefaultDevicesPresenter(coordinator: self)
         interactor.setup(delegate: presenter)
         

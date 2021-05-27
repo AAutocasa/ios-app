@@ -22,13 +22,13 @@ protocol DeviceInteractorDelegate: AnyObject {
 
 // MARK: Implementation
 class DefaultDeviceInteractor: DeviceInteractor {
-    private let deviceProvider: DeviceWorker
     private var presenter: DeviceInteractorDelegate?
     private var cancellable: AnyCancellable?
     private var device: Device?
+    private let deviceRepository: DeviceRepository
     
-    init(deviceWorker: DeviceWorker) {
-        deviceProvider = deviceWorker
+    init(deviceRepository: DeviceRepository) {
+        self.deviceRepository = deviceRepository
     }
     
     func setup(delegate: DeviceInteractorDelegate) {
@@ -38,7 +38,7 @@ class DefaultDeviceInteractor: DeviceInteractor {
     func fetchDevice(with id: String) {
         print("[DefaultDeviceInteractor] Fetch device called with ID: \(id)")
         presenter?.presentLoading()
-        cancellable = deviceProvider.fetchDevice(with: id)
+        cancellable = deviceRepository.fetchDevice(with: id)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] error in
                 if case .failure(let error) = error {
@@ -53,7 +53,7 @@ class DefaultDeviceInteractor: DeviceInteractor {
     
     func activateDevice() {
         guard let device = device else { return }
-        cancellable = deviceProvider.activate(deviceWithId: device.originalId)
+        cancellable = deviceRepository.activate(deviceWithId: device.originalId)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] error in
                 if case .failure(let error) = error {
