@@ -25,11 +25,9 @@ class DefaultDeviceInteractor: DeviceInteractor {
     private var presenter: DeviceInteractorDelegate?
     private var cancellable: AnyCancellable?
     private var device: Device?
-    private let deviceRepository: DeviceRepository
+
+    @Inject private var deviceRepository: DeviceRepository
     
-    init(deviceRepository: DeviceRepository) {
-        self.deviceRepository = deviceRepository
-    }
     
     func setup(delegate: DeviceInteractorDelegate) {
         self.presenter = delegate

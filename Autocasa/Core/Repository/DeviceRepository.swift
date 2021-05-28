@@ -18,14 +18,11 @@ protocol DeviceRepository {
 
 class DefaultDeviceRepository: DeviceRepository {
     
-    private let deviceService: DeviceService
+    @Inject private var deviceService: DeviceService
+    
     private let cache = Cache<String, Device>(
         identifiedBy: { $0.originalId },
         expirationTime: 300)
-    
-    init(deviceService: DeviceService) {
-        self.deviceService = deviceService
-    }
     
     func fetchDevices() -> AnyPublisher<[Device], Error> {
         if cache.isValid {

@@ -33,6 +33,9 @@
 		C0330850265B321000B74FBC /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084F265B321000B74FBC /* JSONDecoder+.swift */; };
 		C070DD3E265B689B00672026 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070DD3D265B689B00672026 /* DeviceView.swift */; };
 		C070DD40265B6CB800672026 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070DD3F265B6CB800672026 /* DevicesViewModel.swift */; };
+		C08BEA7326607E49007511E5 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7226607E49007511E5 /* Injected.swift */; };
+		C08BEA7526607E8C007511E5 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7426607E8C007511E5 /* Resolver.swift */; };
+		C08BEA7826607EDB007511E5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = C08BEA7726607EDB007511E5 /* Swinject */; };
 		C0B02345265F567900C1A220 /* DeviceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02344265F567900C1A220 /* DeviceRepository.swift */; };
 		C0B02348265F56C800C1A220 /* CachedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02347265F56C800C1A220 /* CachedUnit.swift */; };
 		C0B0234A265F587400C1A220 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02349265F587400C1A220 /* Cache.swift */; };
@@ -66,6 +69,8 @@
 		C033084F265B321000B74FBC /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 		C070DD3D265B689B00672026 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		C070DD3F265B6CB800672026 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
+		C08BEA7226607E49007511E5 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		C08BEA7426607E8C007511E5 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		C0B02344265F567900C1A220 /* DeviceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepository.swift; sourceTree = "<group>"; };
 		C0B02347265F56C800C1A220 /* CachedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUnit.swift; sourceTree = "<group>"; };
 		C0B02349265F587400C1A220 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			files = (
 				C0330846265B152400B74FBC /* Moya in Frameworks */,
 				C0330844265B152400B74FBC /* CombineMoya in Frameworks */,
+				C08BEA7826607EDB007511E5 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,9 +180,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C08BEA7126607E41007511E5 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C08BEA7226607E49007511E5 /* Injected.swift */,
+				C08BEA7426607E8C007511E5 /* Resolver.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		C0B02335265F546200C1A220 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C08BEA7126607E41007511E5 /* DI */,
 				C0B02346265F56BA00C1A220 /* Cache */,
 				C033083B265AF3BA00B74FBC /* Coordinator */,
 				C033084E265B320300B74FBC /* Extensions */,
@@ -332,6 +348,7 @@
 			packageProductDependencies = (
 				C0330843265B152400B74FBC /* CombineMoya */,
 				C0330845265B152400B74FBC /* Moya */,
+				C08BEA7726607EDB007511E5 /* Swinject */,
 			);
 			productName = Autocasa;
 			productReference = C0330809265ACE9600B74FBC /* Autocasa.app */;
@@ -362,6 +379,7 @@
 			mainGroup = C0330800265ACE9600B74FBC;
 			packageReferences = (
 				C0330842265B152400B74FBC /* XCRemoteSwiftPackageReference "Moya" */,
+				C08BEA7626607EDB007511E5 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = C033080A265ACE9600B74FBC /* Products */;
 			projectDirPath = "";
@@ -391,6 +409,7 @@
 			files = (
 				C0330833265AE6F000B74FBC /* DeviceService.swift in Sources */,
 				C033084D265B188400B74FBC /* Constants.swift in Sources */,
+				C08BEA7326607E49007511E5 /* Injected.swift in Sources */,
 				C0330841265AF3E700B74FBC /* DevicesCoordinator.swift in Sources */,
 				C0B02345265F567900C1A220 /* DeviceRepository.swift in Sources */,
 				C0B0234C265F618900C1A220 /* Publisher+.swift in Sources */,
@@ -407,6 +426,7 @@
 				C033084B265B171400B74FBC /* FirmwareEndpoint.swift in Sources */,
 				C033082E265AE5B900B74FBC /* DeviceInteractor.swift in Sources */,
 				C033080F265ACE9600B74FBC /* ContentView.swift in Sources */,
+				C08BEA7526607E8C007511E5 /* Resolver.swift in Sources */,
 				C0330826265AE56900B74FBC /* Device.swift in Sources */,
 				C033081F265AE51100B74FBC /* DevicesView.swift in Sources */,
 				C0330850265B321000B74FBC /* JSONDecoder+.swift in Sources */,
@@ -613,6 +633,14 @@
 				revision = e5a28fb62dd5ff4e17b7025643366550044a40b0;
 			};
 		};
+		C08BEA7626607EDB007511E5 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -625,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C0330842265B152400B74FBC /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		C08BEA7726607EDB007511E5 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C08BEA7626607EDB007511E5 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

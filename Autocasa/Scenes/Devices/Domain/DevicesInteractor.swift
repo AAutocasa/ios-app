@@ -23,14 +23,10 @@ protocol DevicesInteractorDelegate: AnyObject {
 // MARK: Implementation
 class DefaultDevicesInteractor: DevicesInteractor {
     
-    private let deviceRepository: DeviceRepository
+    @Inject private var deviceRepository: DeviceRepository
     private var presenter: DevicesInteractorDelegate?
     private var cancellable: AnyCancellable?
     private var devices: [Device]?
-    
-    init(deviceRepository: DeviceRepository) {
-        self.deviceRepository = deviceRepository
-    }
     
     func setup(delegate: DevicesInteractorDelegate) {
         print("[DefaultDevicesInteractor] Setting up delegate for the interactor")
