@@ -16,10 +16,10 @@ class Device: Identifiable, Codable {
     let type: String
     let firmware: Int
     let firmwareVersion: String
-    let status: Int
+    let status: DeviceStatus
     
-    var isActive: Bool {
-        status != 0
+    var isActive: Bool? {
+        status.isActive
     }
     
     let lastHeartbeat: Date
@@ -36,3 +36,14 @@ class Device: Identifiable, Codable {
     }
 }
 
+enum DeviceStatus: Int, Codable {
+    case unknown = -1
+    case active = 0
+    case inactive = 1
+    
+    var isActive: Bool? {
+        if self == .unknown { return nil }
+        else if self == .active { return true }
+        else { return false }
+    }
+}

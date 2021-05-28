@@ -33,7 +33,7 @@
 		C0330850265B321000B74FBC /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033084F265B321000B74FBC /* JSONDecoder+.swift */; };
 		C070DD3E265B689B00672026 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070DD3D265B689B00672026 /* DeviceView.swift */; };
 		C070DD40265B6CB800672026 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070DD3F265B6CB800672026 /* DevicesViewModel.swift */; };
-		C08BEA7326607E49007511E5 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7226607E49007511E5 /* Injected.swift */; };
+		C08BEA7326607E49007511E5 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7226607E49007511E5 /* Inject.swift */; };
 		C08BEA7526607E8C007511E5 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7426607E8C007511E5 /* Resolver.swift */; };
 		C08BEA7826607EDB007511E5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = C08BEA7726607EDB007511E5 /* Swinject */; };
 		C0B02345265F567900C1A220 /* DeviceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02344265F567900C1A220 /* DeviceRepository.swift */; };
@@ -69,7 +69,7 @@
 		C033084F265B321000B74FBC /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 		C070DD3D265B689B00672026 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		C070DD3F265B6CB800672026 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
-		C08BEA7226607E49007511E5 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		C08BEA7226607E49007511E5 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		C08BEA7426607E8C007511E5 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		C0B02344265F567900C1A220 /* DeviceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepository.swift; sourceTree = "<group>"; };
 		C0B02347265F56C800C1A220 /* CachedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUnit.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		C08BEA7126607E41007511E5 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				C08BEA7226607E49007511E5 /* Injected.swift */,
+				C08BEA7226607E49007511E5 /* Inject.swift */,
 				C08BEA7426607E8C007511E5 /* Resolver.swift */,
 			);
 			path = DI;
@@ -251,8 +251,8 @@
 		C0B0233B265F54C500C1A220 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */,
-				C0330837265AE73C00B74FBC /* DevicesStore.swift */,
+				C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */,
+				C0330835265AE70F00B74FBC /* DeviceStore.swift */,
 				C0B02342265F55AC00C1A220 /* Views */,
 				C0B0233C265F54FD00C1A220 /* ViewModels */,
 			);
@@ -279,8 +279,8 @@
 		C0B0233F265F554500C1A220 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C033083E265AF3DE00B74FBC /* DeviceCoordinator.swift */,
-				C0330835265AE70F00B74FBC /* DeviceStore.swift */,
+				C0330837265AE73C00B74FBC /* DevicesStore.swift */,
+				C0330840265AF3E600B74FBC /* DevicesCoordinator.swift */,
 				C0B02341265F559700C1A220 /* ViewModels */,
 				C0B02340265F558C00C1A220 /* Views */,
 			);
@@ -409,7 +409,7 @@
 			files = (
 				C0330833265AE6F000B74FBC /* DeviceService.swift in Sources */,
 				C033084D265B188400B74FBC /* Constants.swift in Sources */,
-				C08BEA7326607E49007511E5 /* Injected.swift in Sources */,
+				C08BEA7326607E49007511E5 /* Inject.swift in Sources */,
 				C0330841265AF3E700B74FBC /* DevicesCoordinator.swift in Sources */,
 				C0B02345265F567900C1A220 /* DeviceRepository.swift in Sources */,
 				C0B0234C265F618900C1A220 /* Publisher+.swift in Sources */,

@@ -30,15 +30,27 @@ struct DeviceView: View {
                 return AnyView(
                     Text("Loading")
                 )
-            case .content(let content):
+            case .content(let device):
                 return AnyView(
                     VStack {
-                        Text("This is the page for the device \(content.id)")
+                        Text("This is the page for the device \(device.id)")
+                        Text("Active? \(device.isActive.description)")
+                        Button {
+                            store.activateDevice()
+                        } label: {
+                            Text("Activate device!")
+                        }
+                        Spacer()
+                            .frame(height: 20)
+                        Button {
+                            store.deactivateDevice()
+                        } label: {
+                            Text("Deactivate device!")
+                        }
+
+
                     }
                 )
-            //AnyView(DeviceContentView(content: content,
-            //  finishButtonTapped: store.performAction,
-            //  navigation: $store.viewModel.navigation))
             }
         }
         .navigationTitle(navigationTitle)

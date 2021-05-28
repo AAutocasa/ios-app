@@ -22,8 +22,12 @@ class DeviceStore: ObservableObject {
         interactor.fetchDevice(with: device.originalId)
     }
     
-    func performAction() {
+    func activateDevice() {
         interactor.activateDevice()
+    }
+    
+    func deactivateDevice() {
+        interactor.deactivateDevice()
     }
     
 }

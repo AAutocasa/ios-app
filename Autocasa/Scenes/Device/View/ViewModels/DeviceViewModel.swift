@@ -25,7 +25,7 @@ struct DeviceViewModel {
                                    type: model.type,
                                    firmware: model.firmware,
                                    firmwareVersion: model.firmwareVersion,
-                                   isActive: model.isActive,
+                                   isActive: model.isActive ?? false,
                                    lastHeartbeat: model.lastHeartbeat,
                                    role: model.role)
         }

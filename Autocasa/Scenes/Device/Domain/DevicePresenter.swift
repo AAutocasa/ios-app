@@ -60,10 +60,4 @@ extension DefaultDevicePresenter: DeviceInteractorDelegate {
         return VMError()
     }
     
-    func presentActivationSuccess() {
-//        let nextCoordinator = ActivationSuccessCoordinator()
-//        let nextView = nextCoordinator.associatedView()
-//        delegate?.renderView(nextView)
-    }
-    
 }

@@ -25,12 +25,15 @@ class DefaultDeviceRepository: DeviceRepository {
         expirationTime: 300)
     
     func fetchDevices() -> AnyPublisher<[Device], Error> {
+        print("[DeviceRepository] Fetching all devices...")
         if cache.isValid {
+            print("[DeviceRepository] Cache is valid! Returning cache")
             return Just(cache.get())
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
         
+        print("[DeviceRepository] Cache invalid. Querying...")
         return deviceService.fetchDevices()
             .handleOutput { [weak self] devices in
                 self?.cache.update(devices)
@@ -40,7 +43,8 @@ class DefaultDeviceRepository: DeviceRepository {
     }
     
     func fetchDevices(filteredBy filterQuery: @escaping (Device) -> Bool) -> AnyPublisher<[Device], Error> {
-        fetchDevices()
+        print("[DeviceRepository] Fetching devices but filtered...")
+        return fetchDevices()
             .map {
                 $0.filter(filterQuery)
             }
@@ -48,13 +52,16 @@ class DefaultDeviceRepository: DeviceRepository {
     }
     
     func fetchDevice(with id: String) -> AnyPublisher<Device, Error> {
+        print("[DeviceRepository] Fetching a single device...")
         if cache.isValid,
            let device = cache.get(withKey: id) {
+            print("[DeviceRepository] Cache hit! Returning cached")
             return Just(device)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
         
+        print("[DeviceRepository] Cache invalid/miss! Querying...")
         return deviceService.fetchDevice(with: id)
             .handleOutput { [weak self] device in
                 guard let cache = self?.cache else { return }
@@ -67,6 +74,7 @@ class DefaultDeviceRepository: DeviceRepository {
     }
     
     func activate(deviceWithId id: String) -> AnyPublisher<Device, Error> {
+        print("[DeviceRepository] Activating device...")
         cache.invalidate(withKey: id)
         
         return deviceService.activate(deviceWithId: id)
@@ -77,6 +85,7 @@ class DefaultDeviceRepository: DeviceRepository {
     }
     
     func deactivate(deviceWithId id: String) -> AnyPublisher<Device, Error> {
+        print("[DeviceRepository] Deactivating device...")
         cache.invalidate(withKey: id)
         
         return deviceService.deactivate(deviceWithId: id)

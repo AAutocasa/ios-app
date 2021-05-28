@@ -11,11 +11,11 @@ import Combine
 protocol DeviceInteractor: AnyObject {
     func fetchDevice(with id: String)
     func activateDevice()
+    func deactivateDevice()
 }
 
 protocol DeviceInteractorDelegate: AnyObject {
     func presentLoading()
-    func presentActivationSuccess()
     func present(device: Device)
     func present(error: Error)
 }
@@ -57,8 +57,21 @@ class DefaultDeviceInteractor: DeviceInteractor {
                 if case .failure(let error) = error {
                     self?.presenter?.present(error: error)
                 }
-            }, receiveValue: { [weak self] _ in
-                self?.presenter?.presentActivationSuccess()
+            }, receiveValue: { [weak self] device in
+                self?.presenter?.present(device: device)
+            })
+    }
+    
+    func deactivateDevice() {
+        guard let device = device else { return }
+        cancellable = deviceRepository.deactivate(deviceWithId: device.originalId)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { [weak self] error in
+                if case .failure(let error) = error {
+                    self?.presenter?.present(error: error)
+                }
+            }, receiveValue: { [weak self] device in
+                self?.presenter?.present(device: device)
             })
     }
 }
