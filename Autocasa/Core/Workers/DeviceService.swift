@@ -17,7 +17,7 @@ protocol DeviceService: AnyObject {
     func deactivate(deviceWithId id: String) -> AnyPublisher<Device, Error>
 }
 
-class DefaultDeviceService: DeviceService {
+class APIDeviceService: DeviceService {
     let provider = MoyaProvider<DeviceEndpoint>()
     
     func fetchDevices() -> AnyPublisher<[Device], Error> {

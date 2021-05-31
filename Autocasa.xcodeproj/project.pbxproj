@@ -36,6 +36,7 @@
 		C08BEA7326607E49007511E5 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7226607E49007511E5 /* Inject.swift */; };
 		C08BEA7526607E8C007511E5 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA7426607E8C007511E5 /* Resolver.swift */; };
 		C08BEA7826607EDB007511E5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = C08BEA7726607EDB007511E5 /* Swinject */; };
+		C08BEA7A266561D9007511E5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BEA79266561D8007511E5 /* AppState.swift */; };
 		C0B02345265F567900C1A220 /* DeviceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02344265F567900C1A220 /* DeviceRepository.swift */; };
 		C0B02348265F56C800C1A220 /* CachedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02347265F56C800C1A220 /* CachedUnit.swift */; };
 		C0B0234A265F587400C1A220 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B02349265F587400C1A220 /* Cache.swift */; };
@@ -71,6 +72,7 @@
 		C070DD3F265B6CB800672026 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
 		C08BEA7226607E49007511E5 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		C08BEA7426607E8C007511E5 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		C08BEA79266561D8007511E5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		C0B02344265F567900C1A220 /* DeviceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRepository.swift; sourceTree = "<group>"; };
 		C0B02347265F56C800C1A220 /* CachedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUnit.swift; sourceTree = "<group>"; };
 		C0B02349265F587400C1A220 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				C08BEA7226607E49007511E5 /* Inject.swift */,
 				C08BEA7426607E8C007511E5 /* Resolver.swift */,
+				C08BEA79266561D8007511E5 /* AppState.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				C0330850265B321000B74FBC /* JSONDecoder+.swift in Sources */,
 				C070DD3E265B689B00672026 /* DeviceView.swift in Sources */,
 				C0B0234A265F587400C1A220 /* Cache.swift in Sources */,
+				C08BEA7A266561D9007511E5 /* AppState.swift in Sources */,
 				C0330828265AE57100B74FBC /* DeviceViewModel.swift in Sources */,
 				C033080D265ACE9600B74FBC /* AutocasaApp.swift in Sources */,
 				C0330838265AE73C00B74FBC /* DevicesStore.swift in Sources */,

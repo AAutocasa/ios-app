@@ -24,7 +24,7 @@ class Resolver {
     
     func buildDeviceContainer(_ container: Container) {
         container.register(DeviceService.self) { _  in
-            return DefaultDeviceService()
+            return APIDeviceService()
         }.inObjectScope(.container)
         
         container.register(DeviceRepository.self) { _  in

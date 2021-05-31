@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let coordinator = DefaultDevicesCoordinator()
+    let coordinator = AppState.shared.mainCoordinator
     
     var body: some View {
         coordinator.associatedView()
