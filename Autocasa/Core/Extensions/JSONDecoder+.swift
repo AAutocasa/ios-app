@@ -20,3 +20,9 @@ class DeviceJSONDecoder: JSONDecoder {
         dateDecodingStrategy = .millisecondsSince1970
     }
 }
+
+class FirmwareJSONDecoder: JSONDecoder {
+    override init() {
+        super.init()
+    }
+}
