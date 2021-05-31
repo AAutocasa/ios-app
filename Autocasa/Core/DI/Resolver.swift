@@ -19,6 +19,7 @@ class Resolver {
     func buildContainer() -> Container {
         let container = Container()
         buildDeviceContainer(container)
+        buildFirmwareContainer(container)
         return container
     }
     
@@ -31,4 +32,15 @@ class Resolver {
             return DefaultDeviceRepository()
         }.inObjectScope(.container)
     }
+    
+    func buildFirmwareContainer(_ container: Container) {
+        container.register(FirmwareService.self) { _  in
+            return DefaultFirmwareService()
+        }.inObjectScope(.container)
+        
+        container.register(FirmwareRepository.self) { _  in
+            return DefaultFirmwareRepository()
+        }.inObjectScope(.container)
+    }
+
 }
