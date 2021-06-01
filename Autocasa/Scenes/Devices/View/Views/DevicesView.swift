@@ -11,37 +11,25 @@ struct DevicesView: View {
     @ObservedObject var store: DevicesStore
     
     var body: some View {
-        NavigationView { () -> AnyView in
+        HStack(alignment: .top) {
             switch store.viewModel.state {
             case .error:
-                return AnyView(
-                    Text("Error!")
-                )
+                Text("Error!")
             case .loading:
-                return AnyView(
-                    Text("Loading")
-                )
+                Text("Loading")
             case .content(let content):
-                return AnyView(
-                    VStack {
-                        List(content.devices, id: \.id) { device in
-                            NavigationLink(
-                                destination: store.viewModel.navigation.destination,
-                                isActive: $store.viewModel.navigation.shouldNavigate) {
-                                DevicesRowView(device: device).onTapGesture {
-                                    store.deviceSelected(originalId: device.originalId)
-                                }
-                            }
+                List(content.devices, id: \.id) { device in
+                    NavigationLink(
+                        destination: store.viewModel.navigation.destination,
+                        isActive: $store.viewModel.navigation.shouldNavigate) {
+                        DevicesRowView(device: device).onTapGesture {
+                            store.deviceSelected(originalId: device.originalId)
                         }
                     }
-                )
-                
-            //AnyView(DeviceContentView(content: content,
-            //  finishButtonTapped: store.performAction,
-            //  navigation: $store.viewModel.navigation))
+                }
             }
         }
-        .navigationTitle("Devices")
         .onAppear(perform: store.fetchDevices)
+        
     }
 }

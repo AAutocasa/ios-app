@@ -11,7 +11,25 @@ struct ContentView: View {
     let coordinator = AppState.shared.mainCoordinator
     
     var body: some View {
-        coordinator.associatedView()
+        NavigationView { () -> AnyView in
+            AnyView(
+                ZStack {
+                    Image("PurpleSpheres")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(maxWidth: UIScreen.main.bounds.width,
+                               maxHeight: UIScreen.main.bounds.height)
+                    HStack(alignment: .top) {
+                        coordinator.associatedView()
+                    }
+                }
+            )
+        }
+        .navigationTitle("Devices")
+        .onAppear(perform: {
+            UITableView.appearance().backgroundColor = UIColor.clear
+        })
     }
 }
 
